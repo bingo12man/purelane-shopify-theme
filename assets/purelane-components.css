@@ -1,0 +1,84 @@
+.purelane-glass {
+  position: relative;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      158deg,
+      rgba(255, 255, 255, 0.8),
+      rgba(236, 230, 247, 0.56) 58%,
+      rgba(222, 212, 240, 0.5)
+    );
+
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+
+  border: 1px solid rgba(75, 58, 143, 0.16);
+  border-radius: var(--purelane-radius);
+
+  box-shadow:
+    0 22px 54px rgba(58, 44, 112, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+}
+
+.purelane-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 46px;
+  padding: 0 22px;
+
+  border: 0;
+  border-radius: 999px;
+
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.35s var(--purelane-ease),
+    box-shadow 0.35s var(--purelane-ease),
+    background 0.35s var(--purelane-ease);
+}
+
+.purelane-button--primary {
+  background: var(--purelane-accent-strong);
+  color: #17102b;
+}
+
+.purelane-button--primary:hover {
+  transform: translateY(-2px);
+}
+
+.purelane-button--secondary {
+  background: rgba(75, 58, 143, 0.08);
+  border: 1px solid rgba(75, 58, 143, 0.24);
+  color: var(--purelane-surface);
+}
+
+.purelane-button--secondary:hover {
+  background: rgba(75, 58, 143, 0.14);
+  transform: translateY(-2px);
+}
+
+.purelane-button:focus-visible,
+.purelane-glass a:focus-visible {
+  outline: 2px solid var(--purelane-accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .purelane-button {
+    transition: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}

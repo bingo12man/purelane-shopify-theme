@@ -1,0 +1,82 @@
+:root {
+  --purelane-ink: #f4f0fb;
+  --purelane-deep: #e2daf3;
+
+  --purelane-brand: #4b3a8f;
+  --purelane-brand-light: #6b55b8;
+
+  --purelane-text: #241a3d;
+  --purelane-text-secondary: rgba(36, 26, 61, 0.78);
+  --purelane-text-muted: rgba(36, 26, 61, 0.56);
+
+  --purelane-accent: #b8701c;
+  --purelane-accent-strong: #c9761d;
+
+  --purelane-surface: #17102b;
+
+  --purelane-radius: 26px;
+  --purelane-radius-small: 16px;
+
+  --purelane-max-width: 1180px;
+  --purelane-section-spacing: 34px;
+
+  --purelane-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.purelane-wrapper {
+  width: 100%;
+  max-width: var(--purelane-max-width);
+  margin: 0 auto;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.purelane-kicker {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--purelane-text-muted);
+}
+
+.purelane-heading-xl,
+.purelane-heading-lg,
+.purelane-heading-md {
+  font-family: "Outfit", system-ui, sans-serif;
+  text-transform: uppercase;
+  color: var(--purelane-surface);
+  font-weight: 800;
+  letter-spacing: -0.018em;
+}
+
+.purelane-heading-xl {
+  font-size: clamp(48px, 8.6vw, 112px);
+  line-height: 0.87;
+}
+
+.purelane-heading-lg {
+  font-size: clamp(30px, 4.6vw, 54px);
+  line-height: 0.94;
+}
+
+.purelane-heading-md {
+  font-size: clamp(21px, 2.5vw, 30px);
+  line-height: 1.04;
+}
+
+.purelane-lede {
+  font-size: clamp(15px, 1.35vw, 17.5px);
+  line-height: 1.62;
+  color: var(--purelane-text-secondary);
+  max-width: 44ch;
+}
+
+@media screen and (max-width: 760px) {
+  :root {
+    --purelane-section-spacing: 22px;
+  }
+
+  .purelane-heading-xl {
+    font-size: clamp(44px, 13.5vw, 64px);
+  }
+}
