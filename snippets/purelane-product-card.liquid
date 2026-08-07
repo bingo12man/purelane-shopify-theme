@@ -1,0 +1,114 @@
+{% liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign current_price = current_variant.price
+  assign compare_price = current_variant.compare_at_price
+
+  assign badge_text = ''
+
+  unless product.available
+    assign badge_text = 'Sold out'
+  else
+    if product.tags contains 'new'
+      assign badge_text = 'New'
+    elsif product.tags contains 'top-rated'
+      assign badge_text = 'Top rated'
+    elsif product.tags contains 'bestseller'
+      assign badge_text = 'Best seller'
+    endif
+  endunless
+
+  assign discount_percent = 0
+
+  if compare_price > current_price
+    assign discount_amount = compare_price | minus: current_price
+    assign discount_percent = discount_amount | times: 100.0 | divided_by: compare_price | round
+  endif
+%}
+
+<article class="purelane-product-card purelane-glass">
+
+  <a
+    href="{{ product.url }}"
+    class="purelane-product-card__media"
+    aria-label="{{ product.title | escape }}"
+  >
+    {% if badge_text != blank %}
+      <span class="purelane-product-card__badge">
+        {{ badge_text }}
+      </span>
+    {% endif %}
+
+    {% if product.featured_image %}
+      {{
+        product.featured_image
+        | image_url: width: 700
+        | image_tag:
+          loading: 'lazy',
+          widths: '240, 360, 480, 700',
+          sizes: '(max-width: 749px) 70vw, 280px',
+          alt: product.featured_image.alt | default: product.title
+      }}
+    {% else %}
+      <div class="purelane-product-card__placeholder">
+        {{ 'product-1' | placeholder_svg_tag: 'purelane-product-card__placeholder-svg' }}
+      </div>
+    {% endif %}
+  </a>
+
+  <div class="purelane-product-card__content">
+
+    <h3 class="purelane-product-card__title">
+      <a href="{{ product.url }}">
+        {{ product.title }}
+      </a>
+    </h3>
+
+    {% if show_rating %}
+      <div class="purelane-product-card__rating" aria-label="Rated 4.8 out of 5">
+        <strong>★ 4.8</strong>
+        <span>· Demo reviews</span>
+      </div>
+    {% endif %}
+
+    <div class="purelane-product-card__price">
+      <strong>
+        {{ current_price | money }}
+      </strong>
+
+      {% if compare_price > current_price %}
+        <s>
+          {{ compare_price | money }}
+        </s>
+
+        <em>
+          {{ discount_percent }}% off
+        </em>
+      {% endif %}
+    </div>
+
+    {% form 'product', product, class: 'purelane-product-card__form' %}
+      <input
+        type="hidden"
+        name="id"
+        value="{{ current_variant.id }}"
+      >
+
+      <button
+        type="submit"
+        name="add"
+        class="purelane-button purelane-button--secondary purelane-product-card__button"
+        {% unless product.available %}
+          disabled
+        {% endunless %}
+      >
+        {% if product.available %}
+          Add to cart
+        {% else %}
+          Sold out
+        {% endif %}
+      </button>
+    {% endform %}
+
+  </div>
+
+</article>
