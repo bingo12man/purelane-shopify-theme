@@ -1,75 +1,304 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "purelane_hero_mkAJdU": {
+      "type": "purelane-hero",
+      "name": "Purelane hero",
+      "settings": {
+        "heading_line_1": "Clean",
+        "heading_line_2": "That",
+        "heading_highlight": "Lasts",
+        "description": "Homecare that works on the toughest grime, made from plants. Kind to your home, your family and the world outside it.",
+        "primary_label": "Shop now",
+        "primary_link": "shopify://collections/bestsellers",
+        "secondary_label": "How it works",
+        "secondary_link": "",
+        "promise_1": "Plant powered",
+        "promise_2": "Safe for kids & pets",
+        "promise_3": "Zero harsh chemicals",
+        "product_1": "kitchen-cleaner-foaming",
+        "product_2": "tap-cleaner-limescale-remover",
+        "product_3": "copper-bronze-brass-cleaner",
+        "slide_1_label": "Single bottle",
+        "slide_1_price": "\u20b9200",
+        "slide_1_compare": "\u20b9299",
+        "slide_1_saving": "33% off",
+        "slide_2_label": "Any 2 products",
+        "slide_2_price": "\u20b9349",
+        "slide_2_compare": "\u20b9598",
+        "slide_2_saving": "Save \u20b9249",
+        "slide_3_label": "Any 3 products",
+        "slide_3_price": "\u20b9499",
+        "slide_3_compare": "\u20b9897",
+        "slide_3_saving": "Save \u20b9398",
+        "rotation_speed": 4
+      }
+    },
+    "purelane_reviews_B9dMpT": {
+      "type": "purelane-reviews",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "review_hDiGgB": {
+          "type": "review",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "rating": 5,
+            "heading": "Works like a charm",
+            "review": "Finally an eco option that cleans as well as the chemical detergent I used for years, and it smells better.",
+            "customer_name": "Anita",
+            "product_name": "Laundry detergent",
+            "verified": true
           }
         },
-        "button": {
-          "type": "buttons",
+        "review_4M8Qyk": {
+          "type": "review",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "rating": 5,
+            "heading": "Best dishwash ever",
+            "review": "Our old dishwash left my help with dry, cracked skin. That stopped completely after we switched.",
+            "customer_name": "Priya",
+            "product_name": "Dishwash gel",
+            "verified": true
+          }
+        },
+        "review_yhqrXY": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "heading": "Great product, great packaging",
+            "review": "Very soft on hands with a lovely fragrance, and it feels good to be using far less plastic.",
+            "customer_name": "Sunita",
+            "product_name": "Liquid handwash",
+            "verified": true
+          }
+        },
+        "review_xyFxpH": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "heading": "Dog friendly",
+            "review": "We switched because chemical floor cleaners were setting off my dog's allergies. No reactions since.",
+            "customer_name": "Rohit S",
+            "product_name": "Floor cleaner",
+            "verified": true
+          }
+        },
+        "review_wD9CgV": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "heading": "Sparkling taps again",
+            "review": "Hard water had ruined our bathroom fittings. Two sprays and the scale wipes straight off, no scrubbing.",
+            "customer_name": "Verified buyer",
+            "product_name": "Tap cleaner",
+            "verified": true
           }
         }
       },
       "block_order": [
-        "heading",
-        "button"
+        "review_hDiGgB",
+        "review_4M8Qyk",
+        "review_yhqrXY",
+        "review_xyFxpH",
+        "review_wD9CgV"
       ],
+      "name": "Purelane reviews",
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "kicker": "That's what they said",
+        "rating": "4.8",
+        "review_count": "8,000+",
+        "homes_count": "12 lakh+",
+        "auto_scroll": true,
+        "scroll_speed": 4
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "purelane_combos_FjcHUJ": {
+      "type": "purelane-combos",
+      "blocks": {
+        "combo_9AigN4": {
+          "type": "combo",
+          "settings": {
+            "bundle_product": "kitchen-essentials-bundle",
+            "badge": "Most Popular",
+            "featured": false,
+            "product_count": 3,
+            "product_1": "kitchen-cleaner-foaming",
+            "product_1_note": "Cuts grease instantly",
+            "product_2": "organic-dishwash-liquid-gel",
+            "product_2_note": "Squeaky clean dishes",
+            "product_3": "tap-cleaner-limescale-remover",
+            "product_3_note": "Melts hard water stains",
+            "description": "Includes: Foaming Kitchen Cleaner, Dishwash Gel & Tap Cleaner. Everything for a sparkling kitchen, no need to pick separately."
+          }
+        },
+        "combo_tQDUPW": {
+          "type": "combo",
+          "settings": {
+            "bundle_product": "laundry-care-bundle",
+            "badge": "",
+            "featured": false,
+            "product_count": 3,
+            "product_1": "natural-laundry-detergent",
+            "product_1_note": "Removes tough stains & odour",
+            "product_2": "natural-fabric-conditioner",
+            "product_2_note": "Softens & freshens every wash",
+            "product_3": "washing-machine-cleaner-descaler",
+            "product_3_note": "Deep-cleans your machine",
+            "description": "Includes: Laundry Detergent, Fabric Conditioner & Machine Cleaner. Softer, fresher wash, all in one box."
+          }
+        },
+        "combo_BQp6kY": {
+          "type": "combo",
+          "settings": {
+            "bundle_product": "complete-home-bundle",
+            "badge": "Best value",
+            "featured": true,
+            "product_count": 5,
+            "product_1": "kitchen-cleaner-foaming",
+            "product_1_note": "Cuts grease instantly",
+            "product_2": "natural-herbal-floor-cleaner",
+            "product_2_note": "Kills everyday grime",
+            "product_3": "gentle-hydrating-liquid-handwash",
+            "product_3_note": "Gentle hydration for hands",
+            "description": "Includes Kitchen Cleaner, Laundry Detergent, Floor Cleaner, Toilet Cleaner & Handwash. Our biggest saving box."
+          }
+        },
+        "combo_LiGfBp": {
+          "type": "combo",
+          "settings": {
+            "bundle_product": "bathroom-deep-clean-bundle",
+            "badge": "",
+            "featured": false,
+            "product_count": 3,
+            "product_1": "non-toxic-toilet-cleaner",
+            "product_1_note": "Deep-cleans the bowl",
+            "product_2": "tap-cleaner-limescale-remover",
+            "product_2_note": "Melts hard water stains",
+            "product_3": "plant-based-magic-eraser-for-kitchen-bathroom-tiles-and-everyday-tough-stains",
+            "product_3_note": "Scrubs away soap scum",
+            "description": "Includes Toilet Cleaner, Tap Cleaner & Magic Eraser. A complete bathroom refresh in one box."
+          }
+        },
+        "combo_tYUTEc": {
+          "type": "combo",
+          "settings": {
+            "bundle_product": "hard-water-solution-kit",
+            "badge": "",
+            "featured": false,
+            "product_count": 2,
+            "product_1": "tap-cleaner-limescale-remover",
+            "product_1_note": "Melts hard water stains",
+            "product_2": "non-toxic-toilet-cleaner",
+            "product_2_note": "Fights limescale in the bowl",
+            "product_3": "",
+            "product_3_note": "",
+            "description": "Includes Tap Cleaner & Toilet Cleaner. A quick, focused fix for hard water stains across the home."
+          }
+        }
+      },
+      "block_order": [
+        "combo_9AigN4",
+        "combo_tQDUPW",
+        "combo_BQp6kY",
+        "combo_LiGfBp",
+        "combo_tYUTEc"
+      ],
+      "name": "Purelane combos",
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
+        "kicker": "Pre-built to save you money",
+        "heading": "Best selling combos",
+        "description": "Swipe through the boxes people order most. Each one is already priced below buying the same products on their own.",
+        "note": "Choose a pre-built bundle or open the bundle product to see its details."
+      }
+    },
+    "purelane_bundles_f4MG6r": {
+      "type": "purelane-bundles",
+      "blocks": {
+        "tier_trWPkm": {
+          "type": "tier",
+          "settings": {
+            "badge": "Starter",
+            "featured": false,
+            "quantity": 2,
+            "price": "\u20b9349",
+            "compare_price": "\u20b9598",
+            "unit_price": "Flat \u20b9174 per product",
+            "product_1": "tap-cleaner-limescale-remover",
+            "product_2": "kitchen-cleaner-foaming",
+            "product_3": "",
+            "feature_1": "Pick any two products",
+            "feature_2": "Free shipping across India",
+            "feature_3": "",
+            "button_label": "Build this box",
+            "button_link": "shopify://collections/full-range"
+          }
+        },
+        "tier_Wwjjrj": {
+          "type": "tier",
+          "settings": {
+            "badge": "Most Popular",
+            "featured": true,
+            "quantity": 3,
+            "price": "\u20b9499",
+            "compare_price": "\u20b9897",
+            "unit_price": "Flat \u20b9166 per product",
+            "product_1": "kitchen-cleaner-foaming",
+            "product_2": "tap-cleaner-limescale-remover",
+            "product_3": "organic-dishwash-liquid-gel",
+            "feature_1": "Pick any three products",
+            "feature_2": "Covers kitchen and laundry",
+            "feature_3": "Free shipping across India",
+            "button_label": "Build this box",
+            "button_link": "shopify://collections/full-range"
+          }
+        },
+        "tier_Vqgik9": {
+          "type": "tier",
+          "settings": {
+            "badge": "Whole home",
+            "featured": false,
+            "quantity": 5,
+            "price": "\u20b9799",
+            "compare_price": "\u20b91495",
+            "unit_price": "Flat \u20b9160 per product",
+            "product_1": "kitchen-cleaner-foaming",
+            "product_2": "tap-cleaner-limescale-remover",
+            "product_3": "natural-herbal-floor-cleaner",
+            "feature_1": "Pick any five products",
+            "feature_2": "Every room in one order",
+            "feature_3": "Free shipping across India",
+            "button_label": "Build this box",
+            "button_link": "shopify://collections/full-range"
+          }
+        }
+      },
+      "block_order": [
+        "tier_trWPkm",
+        "tier_Wwjjrj",
+        "tier_Vqgik9"
+      ],
+      "name": "Purelane bundles",
+      "settings": {
+        "kicker": "Build your bundle",
+        "heading": "One box. Every room.",
+        "description": "Mix and match across kitchen, laundry, home and skin. One flat price, no code needed, free shipping either way."
+      }
+    },
+    "purelane_product_grid_FJkGk9": {
+      "type": "purelane-product-grid",
+      "name": "Purelane product grid",
+      "settings": {
+        "anchor_id": "shop",
+        "kicker": "Bestsellers",
+        "heading": "Loved by 30,000 homes",
         "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "padding_top": 44,
-        "padding_bottom": 36
+        "collection": "bestsellers",
+        "products_to_show": 4
       }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "purelane_hero_mkAJdU",
+    "purelane_reviews_B9dMpT",
+    "purelane_combos_FjcHUJ",
+    "purelane_bundles_f4MG6r",
+    "purelane_product_grid_FJkGk9"
   ]
 }
