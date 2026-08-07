@@ -1,0 +1,21 @@
+{% if product != blank %}
+  <div class="purelane-hero-product">
+
+    {% if product.featured_image %}
+      {{
+        product.featured_image
+        | image_url: width: 900
+        | image_tag:
+          loading: 'eager',
+          widths: '300, 450, 600, 900',
+          sizes: '(max-width: 749px) 38vw, 280px',
+          class: 'purelane-hero-product__image'
+      }}
+    {% else %}
+      <div class="purelane-hero-product__placeholder">
+        {{ 'product-1' | placeholder_svg_tag }}
+      </div>
+    {% endif %}
+
+  </div>
+{% endif %}

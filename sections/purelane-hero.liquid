@@ -1,0 +1,408 @@
+{{ 'purelane-hero.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'purelane-hero.js' | asset_url }}" defer="defer"></script>
+
+<section
+  id="top"
+  class="purelane-hero"
+  data-purelane-hero
+  data-rotation-speed="{{ section.settings.rotation_speed | times: 1000 }}"
+>
+  <div class="purelane-wrapper purelane-hero__grid">
+
+    <div class="purelane-hero__copy">
+
+      <h1 class="purelane-hero__title">
+        {{ section.settings.heading_line_1 }}<br>
+        {{ section.settings.heading_line_2 }}<br>
+        <span>{{ section.settings.heading_highlight }}</span>
+      </h1>
+
+      <div class="purelane-hero__rule" aria-hidden="true">
+        <i></i>
+        <span>◆</span>
+        <i></i>
+      </div>
+
+      {% if section.settings.description != blank %}
+        <p class="purelane-lede purelane-hero__description">
+          {{ section.settings.description }}
+        </p>
+      {% endif %}
+
+      <div class="purelane-hero__buttons">
+        {% if section.settings.primary_label != blank %}
+          <a
+            class="purelane-button purelane-button--primary"
+            href="{{ section.settings.primary_link }}"
+          >
+            {{ section.settings.primary_label }}
+            <span aria-hidden="true">→</span>
+          </a>
+        {% endif %}
+
+        {% if section.settings.secondary_label != blank %}
+          <a
+            class="purelane-button purelane-button--secondary"
+            href="{{ section.settings.secondary_link }}"
+          >
+            {{ section.settings.secondary_label }}
+          </a>
+        {% endif %}
+      </div>
+
+      <div class="purelane-hero__mobile-promises">
+        <div class="purelane-glass">
+          {{ section.settings.promise_1 }}
+        </div>
+
+        <div class="purelane-glass">
+          {{ section.settings.promise_2 }}
+        </div>
+
+        <div class="purelane-glass">
+          {{ section.settings.promise_3 }}
+        </div>
+      </div>
+
+    </div>
+
+    <div class="purelane-hero__stage-wrapper">
+
+      <div
+        class="purelane-hero__promises purelane-glass"
+        aria-label="Product promises"
+      >
+        <div>
+          <span class="purelane-hero__promise-icon">♧</span>
+          <span>{{ section.settings.promise_1 }}</span>
+        </div>
+
+        <div>
+          <span class="purelane-hero__promise-icon">✓</span>
+          <span>{{ section.settings.promise_2 }}</span>
+        </div>
+
+        <div>
+          <span class="purelane-hero__promise-icon">○</span>
+          <span>{{ section.settings.promise_3 }}</span>
+        </div>
+      </div>
+
+      <div class="purelane-hero__stage">
+
+        <!-- SLIDE 1 -->
+        <div
+          class="purelane-hero__slide is-active"
+          data-hero-slide
+          aria-hidden="false"
+        >
+          <div class="purelane-hero__products purelane-hero__products--one">
+            {% render 'purelane-hero-product',
+              product: section.settings.product_1
+            %}
+          </div>
+
+          <div class="purelane-hero__price purelane-glass">
+            <span>{{ section.settings.slide_1_label }}</span>
+
+            <div>
+              <strong>{{ section.settings.slide_1_price }}</strong>
+
+              {% if section.settings.slide_1_compare != blank %}
+                <s>{{ section.settings.slide_1_compare }}</s>
+              {% endif %}
+            </div>
+
+            <em>{{ section.settings.slide_1_saving }}</em>
+          </div>
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div
+          class="purelane-hero__slide"
+          data-hero-slide
+          aria-hidden="true"
+        >
+          <div class="purelane-hero__products purelane-hero__products--two">
+            {% render 'purelane-hero-product',
+              product: section.settings.product_2
+            %}
+
+            {% render 'purelane-hero-product',
+              product: section.settings.product_1
+            %}
+          </div>
+
+          <div class="purelane-hero__price purelane-glass">
+            <span>{{ section.settings.slide_2_label }}</span>
+
+            <div>
+              <strong>{{ section.settings.slide_2_price }}</strong>
+              <s>{{ section.settings.slide_2_compare }}</s>
+            </div>
+
+            <em>{{ section.settings.slide_2_saving }}</em>
+          </div>
+        </div>
+
+        <!-- SLIDE 3 -->
+        <div
+          class="purelane-hero__slide"
+          data-hero-slide
+          aria-hidden="true"
+        >
+          <div class="purelane-hero__products purelane-hero__products--three">
+            {% render 'purelane-hero-product',
+              product: section.settings.product_2
+            %}
+
+            {% render 'purelane-hero-product',
+              product: section.settings.product_3
+            %}
+
+            {% render 'purelane-hero-product',
+              product: section.settings.product_1
+            %}
+          </div>
+
+          <div class="purelane-hero__price purelane-glass">
+            <span>{{ section.settings.slide_3_label }}</span>
+
+            <div>
+              <strong>{{ section.settings.slide_3_price }}</strong>
+              <s>{{ section.settings.slide_3_compare }}</s>
+            </div>
+
+            <em>{{ section.settings.slide_3_saving }}</em>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="purelane-hero__dots" data-hero-dots>
+        <button
+          type="button"
+          class="is-active"
+          data-hero-dot="0"
+          aria-label="Show one product"
+        ></button>
+
+        <button
+          type="button"
+          data-hero-dot="1"
+          aria-label="Show two products"
+        ></button>
+
+        <button
+          type="button"
+          data-hero-dot="2"
+          aria-label="Show three products"
+        ></button>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Purelane hero",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_line_1",
+      "label": "Heading line 1",
+      "default": "Clean"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_2",
+      "label": "Heading line 2",
+      "default": "That"
+    },
+    {
+      "type": "text",
+      "id": "heading_highlight",
+      "label": "Highlighted heading",
+      "default": "Lasts"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Homecare that works on the toughest grime, made from plants. Kind to your home, your family and the world outside it."
+    },
+    {
+      "type": "text",
+      "id": "primary_label",
+      "label": "Primary button",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "primary_link",
+      "label": "Primary button link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_label",
+      "label": "Secondary button",
+      "default": "How it works"
+    },
+    {
+      "type": "url",
+      "id": "secondary_link",
+      "label": "Secondary button link"
+    },
+
+    {
+      "type": "header",
+      "content": "Product promises"
+    },
+    {
+      "type": "text",
+      "id": "promise_1",
+      "label": "Promise 1",
+      "default": "Plant powered"
+    },
+    {
+      "type": "text",
+      "id": "promise_2",
+      "label": "Promise 2",
+      "default": "Safe for kids & pets"
+    },
+    {
+      "type": "text",
+      "id": "promise_3",
+      "label": "Promise 3",
+      "default": "Zero harsh chemicals"
+    },
+
+    {
+      "type": "header",
+      "content": "Products"
+    },
+    {
+      "type": "product",
+      "id": "product_1",
+      "label": "Primary product"
+    },
+    {
+      "type": "product",
+      "id": "product_2",
+      "label": "Second product"
+    },
+    {
+      "type": "product",
+      "id": "product_3",
+      "label": "Third product"
+    },
+
+    {
+      "type": "header",
+      "content": "Single product slide"
+    },
+    {
+      "type": "text",
+      "id": "slide_1_label",
+      "label": "Label",
+      "default": "Single bottle"
+    },
+    {
+      "type": "text",
+      "id": "slide_1_price",
+      "label": "Price",
+      "default": "₹200"
+    },
+    {
+      "type": "text",
+      "id": "slide_1_compare",
+      "label": "Compare price",
+      "default": "₹299"
+    },
+    {
+      "type": "text",
+      "id": "slide_1_saving",
+      "label": "Saving",
+      "default": "33% off"
+    },
+
+    {
+      "type": "header",
+      "content": "Two product slide"
+    },
+    {
+      "type": "text",
+      "id": "slide_2_label",
+      "label": "Label",
+      "default": "Any 2 products"
+    },
+    {
+      "type": "text",
+      "id": "slide_2_price",
+      "label": "Price",
+      "default": "₹349"
+    },
+    {
+      "type": "text",
+      "id": "slide_2_compare",
+      "label": "Compare price",
+      "default": "₹598"
+    },
+    {
+      "type": "text",
+      "id": "slide_2_saving",
+      "label": "Saving",
+      "default": "Save ₹249"
+    },
+
+    {
+      "type": "header",
+      "content": "Three product slide"
+    },
+    {
+      "type": "text",
+      "id": "slide_3_label",
+      "label": "Label",
+      "default": "Any 3 products"
+    },
+    {
+      "type": "text",
+      "id": "slide_3_price",
+      "label": "Price",
+      "default": "₹499"
+    },
+    {
+      "type": "text",
+      "id": "slide_3_compare",
+      "label": "Compare price",
+      "default": "₹897"
+    },
+    {
+      "type": "text",
+      "id": "slide_3_saving",
+      "label": "Saving",
+      "default": "Save ₹398"
+    },
+
+    {
+      "type": "range",
+      "id": "rotation_speed",
+      "label": "Rotation speed",
+      "min": 3,
+      "max": 8,
+      "step": 1,
+      "unit": "s",
+      "default": 4
+    }
+  ],
+  "presets": [
+    {
+      "name": "Purelane hero"
+    }
+  ]
+}
+{% endschema %}
