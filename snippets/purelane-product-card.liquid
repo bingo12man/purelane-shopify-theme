@@ -72,12 +72,12 @@
 
     <div class="purelane-product-card__price">
       <strong>
-        {{ current_price | money }}
+        ₹{{ current_price | money_without_currency | replace: '.00', '' }}
       </strong>
 
       {% if compare_price > current_price %}
         <s>
-          {{ compare_price | money }}
+          ₹{{ compare_price | money_without_currency | replace: '.00', '' }}
         </s>
 
         <em>
