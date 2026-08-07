@@ -1,0 +1,145 @@
+{% liquid
+  assign bundle = block.settings.bundle_product
+  assign current_variant = bundle.selected_or_first_available_variant
+  assign current_price = current_variant.price
+  assign compare_price = current_variant.compare_at_price
+
+  assign saving = 0
+
+  if compare_price > current_price
+    assign saving = compare_price | minus: current_price
+  endif
+%}
+
+<article class="purelane-combo-card purelane-glass">
+
+  <div class="purelane-combo-card__tray">
+
+    {% if saving > 0 %}
+      <span class="purelane-combo-card__saving">
+        You save ₹{{ saving | money_without_currency | replace: '.00', '' }}
+      </span>
+    {% endif %}
+
+    {% if block.settings.badge != blank %}
+      <span class="purelane-combo-card__badge">
+        {{ block.settings.badge }}
+      </span>
+    {% endif %}
+
+    <div class="purelane-combo-card__products">
+
+      {% if block.settings.product_1 != blank %}
+        <div class="purelane-combo-card__item">
+          {% if block.settings.product_1.featured_image %}
+            {{
+              block.settings.product_1.featured_image
+              | image_url: width: 300
+              | image_tag:
+                loading: 'lazy',
+                class: 'purelane-combo-card__image',
+                alt: block.settings.product_1.title
+            }}
+          {% endif %}
+
+          {% if block.settings.product_1_note != blank %}
+            <span>{{ block.settings.product_1_note }}</span>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if block.settings.product_2 != blank %}
+        <span class="purelane-combo-card__plus" aria-hidden="true">+</span>
+
+        <div class="purelane-combo-card__item">
+          {% if block.settings.product_2.featured_image %}
+            {{
+              block.settings.product_2.featured_image
+              | image_url: width: 300
+              | image_tag:
+                loading: 'lazy',
+                class: 'purelane-combo-card__image',
+                alt: block.settings.product_2.title
+            }}
+          {% endif %}
+
+          {% if block.settings.product_2_note != blank %}
+            <span>{{ block.settings.product_2_note }}</span>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if block.settings.product_3 != blank %}
+        <span class="purelane-combo-card__plus" aria-hidden="true">+</span>
+
+        <div class="purelane-combo-card__item">
+          {% if block.settings.product_3.featured_image %}
+            {{
+              block.settings.product_3.featured_image
+              | image_url: width: 300
+              | image_tag:
+                loading: 'lazy',
+                class: 'purelane-combo-card__image',
+                alt: block.settings.product_3.title
+            }}
+          {% endif %}
+
+          {% if block.settings.product_3_note != blank %}
+            <span>{{ block.settings.product_3_note }}</span>
+          {% endif %}
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+
+  <div class="purelane-combo-card__body">
+
+    {% if bundle != blank %}
+      <h3>{{ bundle.title }}</h3>
+    {% endif %}
+
+    <div class="purelane-combo-card__count">
+      {{ block.settings.product_count }} products
+    </div>
+
+    {% if block.settings.description != blank %}
+      <p class="purelane-combo-card__description">
+        {{ block.settings.description }}
+      </p>
+    {% endif %}
+
+    {% if bundle != blank %}
+      <div class="purelane-combo-card__price">
+
+        <strong>
+          ₹{{ current_price | money_without_currency | replace: '.00', '' }}
+        </strong>
+
+        {% if compare_price > current_price %}
+          <s>
+            ₹{{ compare_price | money_without_currency | replace: '.00', '' }}
+          </s>
+
+          <em>
+            Save ₹{{ saving | money_without_currency | replace: '.00', '' }}
+          </em>
+        {% endif %}
+
+      </div>
+
+      <div class="purelane-combo-card__fine">
+        Inclusive of all taxes · COD available
+      </div>
+
+      <a
+        href="{{ bundle.url }}"
+        class="purelane-button {% if block.settings.featured %}purelane-button--primary{% else %}purelane-button--secondary{% endif %}"
+      >
+        Shop bundle →
+      </a>
+    {% endif %}
+
+  </div>
+
+</article>
