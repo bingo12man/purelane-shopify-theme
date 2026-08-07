@@ -11,3 +11,4 @@ Thumbs.db
 node_modules
 *.zip.git-backup/
 .git-backup/
+reference/product-png/

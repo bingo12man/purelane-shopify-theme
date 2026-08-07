@@ -235,4 +235,13 @@
   .purelane-product-card__title {
     font-size: 16px;
   }
+
+  .purelane-product-card__button {
+  min-height: 40px;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
 }
