@@ -1,0 +1,1 @@
+/Users/kirangopi/Downloads/purelane-shopify-theme/AGENTS.md
