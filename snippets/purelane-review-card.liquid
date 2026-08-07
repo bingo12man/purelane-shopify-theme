@@ -1,0 +1,52 @@
+<article class="purelane-review-card purelane-glass">
+
+  <div
+    class="purelane-review-card__stars"
+    aria-label="{{ block.settings.rating }} out of 5 stars"
+  >
+    {% for i in (1..5) %}
+      <span
+        {% if i > block.settings.rating %}
+          class="is-empty"
+        {% endif %}
+        aria-hidden="true"
+      >
+        ★
+      </span>
+    {% endfor %}
+  </div>
+
+  {% if block.settings.heading != blank %}
+    <h3 class="purelane-review-card__heading">
+      {{ block.settings.heading }}
+    </h3>
+  {% endif %}
+
+  {% if block.settings.review != blank %}
+    <p class="purelane-review-card__text">
+      {{ block.settings.review }}
+    </p>
+  {% endif %}
+
+  <div class="purelane-review-card__customer">
+
+    {% if block.settings.verified %}
+      <span
+        class="purelane-review-card__verified"
+        aria-label="Verified buyer"
+      >
+        ✓
+      </span>
+    {% endif %}
+
+    <strong>{{ block.settings.customer_name }}</strong>
+
+    {% if block.settings.product_name != blank %}
+      <span>
+        · {{ block.settings.product_name }}
+      </span>
+    {% endif %}
+
+  </div>
+
+</article>
