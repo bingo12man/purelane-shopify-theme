@@ -1,15 +1,25 @@
 {% if product != blank %}
+
+  {% liquid
+    assign hero_image = product.images[1]
+
+    if hero_image == blank
+      assign hero_image = product.featured_image
+    endif
+  %}
+
   <div class="purelane-hero-product">
 
-    {% if product.featured_image %}
+    {% if hero_image %}
       {{
-        product.featured_image
+        hero_image
         | image_url: width: 900
         | image_tag:
           loading: 'eager',
           widths: '300, 450, 600, 900',
           sizes: '(max-width: 749px) 38vw, 280px',
-          class: 'purelane-hero-product__image'
+          class: 'purelane-hero-product__image',
+          alt: product.title
       }}
     {% else %}
       <div class="purelane-hero-product__placeholder">
@@ -18,4 +28,5 @@
     {% endif %}
 
   </div>
+
 {% endif %}
