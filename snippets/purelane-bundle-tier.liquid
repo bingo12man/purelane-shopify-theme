@@ -1,0 +1,90 @@
+<article class="purelane-bundle-tier purelane-glass {% if block.settings.featured %}is-featured{% endif %}">
+
+  {% if block.settings.badge != blank %}
+    <span class="purelane-bundle-tier__badge">
+      {{ block.settings.badge }}
+    </span>
+  {% endif %}
+
+  <div class="purelane-bundle-tier__products">
+    {% if block.settings.product_1 != blank and block.settings.product_1.featured_image %}
+      {{
+        block.settings.product_1.featured_image
+        | image_url: width: 220
+        | image_tag:
+          loading: 'lazy',
+          class: 'purelane-bundle-tier__image',
+          alt: block.settings.product_1.title
+      }}
+    {% endif %}
+
+    {% if block.settings.product_2 != blank and block.settings.product_2.featured_image %}
+      {{
+        block.settings.product_2.featured_image
+        | image_url: width: 220
+        | image_tag:
+          loading: 'lazy',
+          class: 'purelane-bundle-tier__image',
+          alt: block.settings.product_2.title
+      }}
+    {% endif %}
+
+    {% if block.settings.product_3 != blank and block.settings.product_3.featured_image %}
+      {{
+        block.settings.product_3.featured_image
+        | image_url: width: 220
+        | image_tag:
+          loading: 'lazy',
+          class: 'purelane-bundle-tier__image',
+          alt: block.settings.product_3.title
+      }}
+    {% endif %}
+  </div>
+
+  <div class="purelane-bundle-tier__quantity">
+    {{ block.settings.quantity }}
+    <small>Products</small>
+  </div>
+
+  <div class="purelane-bundle-tier__price">
+    {{ block.settings.price }}
+
+    {% if block.settings.compare_price != blank %}
+      <s>{{ block.settings.compare_price }}</s>
+    {% endif %}
+  </div>
+
+  {% if block.settings.unit_price != blank %}
+    <p class="purelane-bundle-tier__unit">
+      {{ block.settings.unit_price }}
+    </p>
+  {% endif %}
+
+  <ul class="purelane-bundle-tier__features">
+    {% if block.settings.feature_1 != blank %}
+      <li>✓ {{ block.settings.feature_1 }}</li>
+    {% endif %}
+
+    {% if block.settings.feature_2 != blank %}
+      <li>✓ {{ block.settings.feature_2 }}</li>
+    {% endif %}
+
+    {% if block.settings.feature_3 != blank %}
+      <li>✓ {{ block.settings.feature_3 }}</li>
+    {% endif %}
+  </ul>
+
+  {% if block.settings.button_label != blank %}
+    <a
+      href="{{ block.settings.button_link }}"
+      class="purelane-button {% if block.settings.featured %}purelane-button--primary{% else %}purelane-button--secondary{% endif %}"
+    >
+      {{ block.settings.button_label }}
+
+      {% if block.settings.featured %}
+        <span aria-hidden="true">→</span>
+      {% endif %}
+    </a>
+  {% endif %}
+
+</article>
